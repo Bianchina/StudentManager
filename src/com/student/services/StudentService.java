@@ -51,7 +51,7 @@ public class StudentService {
 	}
 	
 	public double getAverageGrade() {
-		if(students == null || students.size() != 0) {
+		if(students == null || students.isEmpty()) {
 			throw new NullPointerException("Error. No hay lista de alumnos");
 		}
 		
