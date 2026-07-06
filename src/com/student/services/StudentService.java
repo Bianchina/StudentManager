@@ -60,7 +60,15 @@ public class StudentService {
 	
 	// Ariel
 	public double getAverageGrade() {
-		return 0.0;
+		if(students == null || students.isEmpty()) {
+			throw new NullPointerException("Error. No hay lista de alumnos");
+		}
+		
+		double gradeAcumula = .0;
+		for(String id : students.keySet()) {
+			gradeAcumula = gradeAcumula + students.get(id).getGrade();
+		}
+		return gradeAcumula / students.size();
 	}
 	
 }
