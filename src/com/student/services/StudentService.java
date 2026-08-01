@@ -54,7 +54,11 @@ public class StudentService {
 
 	// Bianchina
 	public boolean updateStudentGrade(String id, double grade) {
-		
+		Student student = students.get(id); 
+		if (student != null) {
+			student.setGrade(grade);
+			return true;
+		}
 		return false;
 	}
 	
